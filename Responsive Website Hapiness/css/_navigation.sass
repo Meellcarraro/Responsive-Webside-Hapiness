@@ -1,0 +1,40 @@
+$color-principal: #fff
+$color-secundario: #000
+body
+    section
+        .navigation
+            position: absolute
+            left: 50%
+            top: 50%
+            z-index: 5
+            transform: translate(-50% ,-50%)
+            li  
+                list-style: none
+                margin: 15px 0px
+                text-align: center
+                opacity: 0
+                visibility: hidden
+                transition: 0.5s
+                transform: translateX(200px)
+                transition-delay: calc( 0.2s * var(--i))
+                a 
+                    color: $color-secundario
+                    text-decoration: none
+                    text-transform: uppercase
+                    font-size: 1.5rem
+                    background: $color-principal
+                    padding: 5px
+                    letter-spacing: 4px
+                    display: block
+                    display: inline-block      
+                    &:hover
+                        background: $color-secundario
+                        color: $color-principal
+                        letter-spacing: 10px
+                        text-transform: lowercase
+        .navigation.active
+            li 
+                opacity: 1
+                visibility: visible
+                transform: translateX(0px)
+                
